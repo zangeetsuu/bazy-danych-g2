@@ -1,3 +1,4 @@
+```sql
 #1.
 delete from postac
 where nazwa <> 'Bjorn'
