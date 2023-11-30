@@ -1,4 +1,4 @@
-**sql
+```sql
 create table kreatura(
 idkreatury int(11) primary key auto_increment,
 nazwa varchar(30),
@@ -22,5 +22,5 @@ idEkwipunku int(11) primary key auto_increment,
 idKreatury int(11),
 idZasobu int(11),
 ilosc int(10)
-
-**
+)
+```
