@@ -23,4 +23,43 @@ idKreatury int(11),
 idZasobu int(11),
 ilosc int(10)
 )
+
+
+
+
+insert into zasob select * from wikingowie.zasob
+
+select * from zasob where rodzaj = "jedzenie"
+
+select idZasobu, ilosc from ekwipunek where idKreatury in (1,3,5)
+
+select * from kreatura where rodzaj <> "wiedzma" and udzwig>=50
+
+select * from zasob where 2<=waga<=5
+
+select * from kreatura where nazwa like '%or%' and 30<=udzwig<=70
+
+select * from zasob where  month('07') and month('08')
+
+select * from zasob where rodzaj is not null order by waga asc
+
+select * from kreatura order by dataUr asc limit 5
+
+select distinct rodzaj from zasob
+
+select nazwa, rodzaj from kreatura where rodzaj like 'wi%'
+
+select ilosc*waga as waga from zasob  where year(dataPozyskania) between 2000 and 2007
+
+select waga*0.3 as wagaWlasciwa from zasob where rodzaj = "jedzenie";
+
+select  waga*0.7 as wagaOdpadkow from zasob where rodzaj = "jedzenie";
+
+select * from zasob where rodzaj is null
+
+select distinct rodzaj from zasob where nazwa like 'Ba%' or '%os' order by rodzaj
+
+
+
+
 ```
