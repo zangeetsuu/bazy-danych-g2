@@ -46,5 +46,16 @@ select concat(k1.nazwa,' - ',k2.nazwa) from kreatura k1 inner join kreatura k2 w
 
 # Zadanie 5
 ```sql
+select k.rodzaj, avg(z.waga*e.ilosc) from kreatura k
+inner join ekwipunek e on k.idKreatury=e.idKreatury
+inner join zasob z on e.idZasobu=z.idZasobu
+where k.rodzaj not in('waz','malpa') and e.ilosc<30 group by k.rodzaj;
+
+
+select a.nazwa, a.rodzaj, a.dataUr from kreatura a,
+(select min(dataUr) min, max(dataUr) max
+from kreatura group by rodzaj) b
+where b.min = a.dataUr or b.max=a.dataUr;
 
 ```
+
