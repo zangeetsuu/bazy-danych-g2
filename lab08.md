@@ -1,4 +1,4 @@
-# Zadanie 1 a)
+# Zadanie 1 1.
 ```sql
 insert into infs_kasperekk.kreatura select * from wikingowie.kreatura
 
@@ -9,7 +9,7 @@ create table infs_kasperekk.sektor select * from wikingowie.sektor
 create table infs_kasperekk.wyprawa select * from wikingowie.wyprawa
 
 ```
-# Zadanie 1 b)
+# Zadanie 1 2.
 ```sql
 select k.nazwa
 from kreatura k left join uczestnicy u on u.id_uczestnika=k.idkreatury where u.id_uczestnika is null
@@ -19,9 +19,13 @@ from kreatura k left join uczestnicy u on u.id_uczestnika=k.idkreatury where u.i
 select w.nazwa, sum(e.ilosc) from wyprawa w inner join uczestnicy u on w.id_wyprawy=u.id_wyprawy
 inner join ekwipunek e on w.id_wyprawy = e.idEkwipunku group by w.nazwa
 
+```
+# Zadanie 2 1.
+```sql
+select w.nazwa, count(u.id_uczestnika), group_concat(k.nazwa separator ' | ') as 'nazwa wyprawy'  from wyprawa w inner join uczestnicy u on w.id_wyprawy=u.id_wyprawy
+inner join kreatura k on u.id_uczestnika=k.idKreatury group by w.nazwa;
 
-select w.nazwa, count(u.id_uczestnika), k.nazwa, group_concat(w.nazwa separator '|') as 'nazwa wyprawy'  from w.wyprawa inner join uczetnicy u on w.id_wyprawy=u.id_uczestnika
-inner join kreatury k on w.id_wyprawy=k.nazwa group by w.nazwa
+
 
 
 
