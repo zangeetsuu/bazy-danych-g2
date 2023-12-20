@@ -1,10 +1,16 @@
+# Zadanie 1 a)
 ```sql
 insert into infs_kasperekk.kreatura select * from wikingowie.kreatura
 
 
+create table infs_kasperekk.uczestnicy select * from wikingowie.uczestnicy
+create table infs_kasperekk.etapy_wyprawy select * from wikingowie.etapy_wyprawy
+create table infs_kasperekk.sektor select * from wikingowie.sektor
 create table infs_kasperekk.wyprawa select * from wikingowie.wyprawa
 
-
+```
+# Zadanie 1 b)
+```sql
 select k.nazwa
 from kreatura k left join uczestnicy u on u.id_uczestnika=k.idkreatury where u.id_uczestnika is null
 
