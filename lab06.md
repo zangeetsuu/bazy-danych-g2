@@ -35,11 +35,11 @@ select idZasobu, ilosc from ekwipunek where idKreatury in (1,3,5)
 
 select * from kreatura where rodzaj <> "wiedzma" and udzwig>=50
 
-select * from zasob where 2<=waga<=5
+select * from zasob where waga between 2 and 5
 
-select * from kreatura where nazwa like '%or%' and 30<=udzwig<=70
+select * from kreatura where nazwa like '%or%' and udzwig between 30 and 70
 
-select * from zasob where  month('07') and month('08')
+select * from zasob where month(dataPozyskania) = 7 or month(dataPozyskania) = 08;
 
 select * from zasob where rodzaj is not null order by waga asc
 
